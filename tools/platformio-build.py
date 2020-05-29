@@ -185,6 +185,9 @@ env.Append(
     ]
 )
 
+if not env.BoardConfig().get("build.ldscript", ""):
+    env.Replace(LDSCRIPT_PATH=env.BoardConfig().get("build.arduino.ldscript", ""))
+
 #
 # Target: Build Core Library
 #
